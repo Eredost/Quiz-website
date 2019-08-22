@@ -28,3 +28,9 @@ $router->get("/signin",
         "uses" => "UserController@signIn",
         "as"   => "signin-page"
 ));
+
+$router->get("/quiz/{quizId}",
+    array(
+        "uses" => "QuizController@quiz",
+        "as"   => "quiz-page"
+));
