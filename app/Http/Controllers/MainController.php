@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Quiz;
+
 class MainController extends Controller
 {
     /**
@@ -11,6 +13,11 @@ class MainController extends Controller
      */
     public function home()
     {
-        return view("home");
+        $quizzes = Quiz::all()->take(9);
+
+        return view("home",
+            array(
+                "quizzes" => $quizzes
+        ));
     }
 }
