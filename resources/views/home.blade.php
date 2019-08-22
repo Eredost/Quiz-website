@@ -19,7 +19,7 @@
 
             @foreach($quizzes as $quiz)
                 <div class="div__card">
-                    <h4 class="card__title"><a href="#">{{ $quiz->title }}</a></h4>
+                    <h4 class="card__title"><a href="{{ route("quiz-page", array("quizId" => $quiz->id)) }}">{{ $quiz->title }}</a></h4>
                     <p class="card__description">{{ $quiz->description }}</p>
                     <p class="card__author">{{ $quiz->app_users->firstname . " " . $quiz->app_users->lastname }}</p>
                 </div>

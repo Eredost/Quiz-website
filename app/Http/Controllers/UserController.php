@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
-     * @param Request
+     * @param Request $request
      * @return \Illuminate\View\View
      */
     public function signUp(Request $request)
@@ -18,7 +18,7 @@ class UserController extends Controller
     }
 
     /**
-     * @param Request
+     * @param Request $request
      * @return \Illuminate\View\View
      */
     public function signIn(Request $request)
