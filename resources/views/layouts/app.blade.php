@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('css/reset.css') }}">
     <link rel="stylesheet" href="{{ url('css/main.css') }}">
+    @yield("additional-links")
     <title>@section("page-title") O'Quiz @show</title>
 </head>
 <body class="body">
@@ -16,6 +17,8 @@
         @yield("navbar", view("layouts.navbar"))
 
         @yield("body")
+
+        @yield("navbar", view("layouts.footer"))
 
     </div>
 

@@ -13,7 +13,7 @@ class MainController extends Controller
      */
     public function home()
     {
-        $quizzes = Quiz::all()->take(9);
+        $quizzes = Quiz::all();
 
         return view("home",
             array(

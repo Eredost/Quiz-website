@@ -16,3 +16,15 @@ $router->get("/",
         "uses" => "MainController@home",
         "as"   => "home-page"
 ));
+
+$router->get("/signup",
+    array(
+        "uses" => "UserController@signUp",
+        "as"   => "signup-page"
+));
+
+$router->get("/signin",
+    array(
+        "uses" => "UserController@signIn",
+        "as"   => "signin-page"
+));
