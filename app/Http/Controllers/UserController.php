@@ -121,11 +121,31 @@ class UserController extends Controller
         ));
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logOut()
     {
         session_destroy();
         $_SESSION = array();
 
         return redirect()->route("home-page");
+    }
+
+    public function profile()
+    {
+        if (!UserSession::isConnected()) {
+
+            return redirect()->route("home-page");
+        }
+        $user = UserSession::getUser();
+        $creationDate = new \DateTime($user->created_at);
+        $creationDate = $creationDate->format('d/m/Y à H:i:s');
+
+        return view("profile",
+            array(
+                "user"         => $user,
+                "creationDate" => $creationDate
+        ));
     }
 }

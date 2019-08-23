@@ -64,3 +64,9 @@ $router->get("/tags/{tagId}/quiz",
         "uses" => "TagController@quiz",
         "as"   => "tag-quiz-page"
 ));
+
+$router->get("/account",
+    array(
+        "uses" => "UserController@profile",
+        "as"   => "profile-page"
+));

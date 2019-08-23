@@ -7,6 +7,7 @@
 
             @if (App\Utils\UserSession::isConnected())
 
+                <li class="nav__link"><a href="{{ route("profile-page") }}" class="nav__link--blue">Profil</a></li>
                 <li class="nav__link"><a href="{{ route("logout-page") }}" class="nav__link--blue">Se deconnecter</a></li>
 
             @else
