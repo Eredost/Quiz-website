@@ -104,7 +104,7 @@ class UserController extends Controller
             if (empty($errors)) {
                 $user = AppUser::where("email", $email)->get();
 
-                if ($email == $user->first()->email && password_verify($password, $user->first()->password)) {
+                if ($user->first() && $email == $user->first()->email && password_verify($password, $user->first()->password)) {
 
                     UserSession::connect($user->first());
                     return redirect()->route("home-page");
