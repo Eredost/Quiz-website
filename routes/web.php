@@ -23,10 +23,22 @@ $router->get("/signup",
         "as"   => "signup-page"
 ));
 
+$router->post("/signup",
+    array(
+        "uses" => "UserController@signUp",
+        "as"   => "signup-post"
+));
+
 $router->get("/signin",
     array(
         "uses" => "UserController@signIn",
         "as"   => "signin-page"
+));
+
+$router->get("/logout",
+    array(
+        "uses" => "UserController@logOut",
+        "as"   => "logout-page"
 ));
 
 $router->get("/quiz/{quizId}",

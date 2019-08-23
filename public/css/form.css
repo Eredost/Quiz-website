@@ -26,6 +26,24 @@
     border-radius: 5px;
 }
 
+.form__block--error,
+.form__block--success {
+    padding: 1em;
+    background-color: #ff4444;
+    color: #FFF;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.form__block--success {
+    background-color: #00C851;
+}
+
+.form__block--error + .form__block--error,
+.form__block--success + .form__block--success {
+    margin-top: 1em;
+}
+
 .form__input--submit {
     float: right;
     background-color: #00C851;
@@ -34,7 +52,7 @@
     border: 2px solid transparent;
     border-radius: 5px;
     padding: 0.6em 0.7em;
-    margin-right: 10%;
+    margin: 1em 10% 0 0;
     font-size: 1.05em;
     -webkit-transition: .3s background-color, color, border;
     -o-transition: .3s background-color, color, border;

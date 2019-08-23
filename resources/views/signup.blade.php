@@ -16,17 +16,17 @@
 
         <div class="form__block">
             <label for="firstname" class="form__label">Prénom :</label>
-            <input type="text" id="firstname" name="firstname" class="form__input" placeholder="Votre prénom">
+            <input type="text" id="firstname" name="firstname" class="form__input" placeholder="Votre prénom" value="{{ $request->input("firstname") }}">
         </div>
 
         <div class="form__block">
             <label for="lastname" class="form__label">Nom :</label>
-            <input type="text" id="lastname" name="lastname" class="form__input" placeholder="Votre nom">
+            <input type="text" id="lastname" name="lastname" class="form__input" placeholder="Votre nom" value="{{ $request->input("lastname") }}">
         </div>
 
         <div class="form__block">
             <label for="email" class="form__label">Email :</label>
-            <input type="email" id="email" name="email" class="form__input" placeholder="Votre email">
+            <input type="email" id="email" name="email" class="form__input" placeholder="Votre email" value="{{ $request->input("email") }}">
         </div>
 
         <div class="form__block">
@@ -38,6 +38,18 @@
             <label for="password2" class="form__label">Mot de passe (confirmation) :</label>
             <input type="password" id="password2" name="password2" class="form__input" placeholder="Confirmation de votre mot de passe">
         </div>
+
+        @foreach($errors as $error)
+            <div class="form__block--error">
+                <p>{{ $error }}</p>
+            </div>
+        @endforeach
+
+        @foreach($success as $message)
+            <div class="form__block--success">
+                <p>{{ $message }}</p>
+            </div>
+        @endforeach
 
         <div class="form__block">
             <input type="submit" class="form__input--submit" value="S'inscrire">
