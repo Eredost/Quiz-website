@@ -5,7 +5,7 @@
 @endsection
 
 @section("page-title")
-    @parent - Quiz
+    @parent - {{ $quiz->title }}
 @endsection
 
 @section("body")

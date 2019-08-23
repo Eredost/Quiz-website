@@ -83,7 +83,7 @@ a:hover, a.active {
 }
 
 #quiz {
-    margin-top: 4em;
+    margin-top: 3em;
 }
 
 .section__div--flex {
@@ -126,6 +126,40 @@ a:hover, a.active {
 .card__description,
 .card__author {
     padding: 0.8em 0;
+}
+
+.tags__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tag__link {
+    margin: 1em 0;
+}
+
+.tag__link + .tag__link {
+    margin-left: 1.5em;
+}
+
+.tag__link--blue {
+    display: inline-block;
+    padding: 0.6em 0.9em;
+    border: 2px solid #3F729B;
+    border-radius: 10px;
+    background-color: #3F729B;
+    color: #FFF;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.tag__link--blue:hover {
+    background-color: #FFF;
+    color: #3F729B;
+    transform: scale(1.1);
+    text-decoration: none;
 }
 
 /* FOOTER */
