@@ -16,13 +16,19 @@
 
         <div class="form__block">
             <label for="email" class="form__label">Email :</label>
-            <input type="email" id="email" name="email" class="form__input" placeholder="Votre email">
+            <input type="email" id="email" name="email" class="form__input" placeholder="Votre email" value="{{ $request->input("email") }}">
         </div>
 
         <div class="form__block">
             <label for="password" class="form__label">Mot de passe :</label>
             <input type="password" id="password" name="password" class="form__input" placeholder="Votre mot de passe">
         </div>
+
+        @foreach($errors as $error)
+            <div class="form__block--error">
+                <p>{{ $error }}</p>
+            </div>
+        @endforeach
 
         <div class="form__block">
             <input type="submit" class="form__input--submit" value="Se connecter">

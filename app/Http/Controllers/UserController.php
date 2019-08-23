@@ -72,7 +72,6 @@ class UserController extends Controller
                 $newUser->password = password_hash($password, PASSWORD_DEFAULT);
 
                 $newUser->save();
-                $newUser->update();
                 UserSession::connect($newUser);
                 $success[] = "Votre compte a été créé avec succès !";
             }
@@ -91,7 +90,35 @@ class UserController extends Controller
      */
     public function signIn(Request $request)
     {
-        return view("signin");
+        $errors = array();
+
+        if ($request->isMethod("post")) {
+
+            $email = trim($request->input("email")) ?? false;
+            $password = trim($request->input("password")) ?? false;
+
+            if (!$email || !$password) {
+                $errors[] = "Tous les champs doivent être remplie !";
+            }
+
+            if (empty($errors)) {
+                $user = AppUser::where("email", $email)->get();
+
+                if ($email == $user->first()->email && password_verify($password, $user->first()->password)) {
+
+                    UserSession::connect($user->first());
+                    return redirect()->route("home-page");
+                } else {
+                    $errors[] = "Identifiants invalides !";
+                }
+            }
+        }
+
+        return view("signin",
+            array(
+                "errors"  => $errors,
+                "request" => $request
+        ));
     }
 
     public function logOut()

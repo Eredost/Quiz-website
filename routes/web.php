@@ -35,6 +35,12 @@ $router->get("/signin",
         "as"   => "signin-page"
 ));
 
+$router->post("/signin",
+    array(
+        "uses" => "UserController@signIn",
+        "as"   => "signin-post"
+));
+
 $router->get("/logout",
     array(
         "uses" => "UserController@logOut",
