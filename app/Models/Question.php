@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+
     /**
      * Get the level that is associated with the question.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function levels()
+    public function level()
     {
-        return $this->belongsTo('App\Models\Level');
+        return $this->belongsTo('App\Models\Level', "levels_id");
     }
 }

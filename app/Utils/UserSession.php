@@ -16,7 +16,7 @@ abstract class UserSession {
      */
     public static function connect(AppUser $user)
     {
-        $_SESSION[self::SESSION_INDEX_NAME] = $user->id;
+        $_SESSION[self::SESSION_INDEX_NAME] = $user;
     }
 
     /**

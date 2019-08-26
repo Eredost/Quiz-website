@@ -53,6 +53,12 @@ $router->get("/quiz/{quizId}",
         "as"   => "quiz-page"
 ));
 
+$router->post("/quiz/{quizId}",
+    array(
+        "uses" => "QuizController@quiz",
+        "as"   => "quiz-post"
+));
+
 $router->get("/tags",
     array(
         "uses" => "TagController@tags",
