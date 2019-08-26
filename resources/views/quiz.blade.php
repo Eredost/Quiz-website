@@ -69,9 +69,25 @@
                     <div class="card__body">
                         @foreach($answers as $index => $answer)
                             @if ($answer->questions_id == $question->id)
-                                <div class="card__body--question">
+
+                                    <div class="card__body--question">
+
+                                @if ($question->answers_id == $answer->id)
+
+                                    <p class="answer--correct">{{ $answer->description }}</p>
+
+                                @elseif (!empty($userRes[$question->id]) && $userRes[$question->id] == $answer->id)
+
+                                    <p class="answer--wrong">{{ $answer->description }}</p>
+
+                                @else
+
                                     <p>{{ $answer->description }}</p>
-                                </div>
+
+                                @endif
+
+                                    </div>
+
                                 @php
                                     unset($answers[$index]);
                                 @endphp

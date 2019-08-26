@@ -95,6 +95,16 @@
     margin: 1.5em 0;
 }
 
+.answer--wrong {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+.answer--correct {
+    color: #00C851;
+    font-weight: bold;
+}
+
 .radio {
     position: relative;
     cursor: pointer;

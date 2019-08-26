@@ -17,10 +17,11 @@ class QuizController extends Controller
      */
     public function quiz(Request $request, $quizId)
     {
-        $score = 0;
+        $score = $userResponses = 0;
         $quiz = Quiz::find($quizId);
         $answers = Question::join("answers", "questions.id", "=", "answers.questions_id")
                                 ->select("answers.*")->where("questions.quizzes_id", $quizId)->get();
+        $answers = $answers->shuffle();
 
         if ($request->isMethod("post")) {
 
@@ -37,7 +38,8 @@ class QuizController extends Controller
                 "quiz"    => $quiz,
                 "answers" => $answers,
                 "request" => $request,
-                "score"   => $score
+                "score"   => $score,
+                "userRes" => $userResponses
         ));
     }
 }

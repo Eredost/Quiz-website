@@ -16,7 +16,7 @@
 
         <div class="section__div--flex">
 
-            @foreach($quizzes as $quiz)
+            @foreach($tag->quizzes as $quiz)
                 <div class="div__card">
                     <h4 class="card__title"><a href="{{ route("quiz-page", array("quizId" => $quiz->id)) }}">{{ $quiz->title }}</a></h4>
                     <p class="card__description">{{ $quiz->description }}</p>

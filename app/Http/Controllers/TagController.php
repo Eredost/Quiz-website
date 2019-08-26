@@ -29,13 +29,10 @@ class TagController extends Controller
     public function quiz($tagId)
     {
         $tag = Tag::find($tagId);
-        $quizzes = Quiz::join("quizzes_has_tags", "quizzes.id", "=", "quizzes_has_tags.quizzes_id")
-                            ->join("tags", "quizzes_has_tags.tags_id", "=", "tags.id")
-                            ->where("tags.id", "=", $tagId)->get();
+
         return view("tag",
             array(
-                "tag"     => $tag,
-                "quizzes" => $quizzes
+                "tag" => $tag
         ));
     }
 }
