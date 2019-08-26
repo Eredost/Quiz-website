@@ -20,8 +20,8 @@ class QuizController extends Controller
         $score = $userResponses = 0;
         $quiz = Quiz::find($quizId);
         $answers = Question::join("answers", "questions.id", "=", "answers.questions_id")
-                                ->select("answers.*")->where("questions.quizzes_id", $quizId)->get();
-        $answers = $answers->shuffle();
+                                ->select("answers.*")->where("questions.quizzes_id", $quizId)
+                                ->inRandomOrder()->get();
 
         if ($request->isMethod("post")) {
 

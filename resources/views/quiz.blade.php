@@ -54,7 +54,7 @@
 
         @else
 
-            @if ($score)
+            @if ($request->isMethod("post"))
             <div class="quiz__score">
                 <h3 class="quiz__score--large">Votre score : {{ $score }} / {{ count($quiz->questions) }}</h3>
             </div>
@@ -72,7 +72,7 @@
 
                                     <div class="card__body--question">
 
-                                @if ($question->answers_id == $answer->id)
+                                @if ($question->answers_id == $answer->id && App\Utils\UserSession::isConnected())
 
                                     <p class="answer--correct">{{ $answer->description }}</p>
 
