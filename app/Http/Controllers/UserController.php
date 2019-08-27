@@ -126,8 +126,7 @@ class UserController extends Controller
      */
     public function logOut()
     {
-        session_destroy();
-        $_SESSION = array();
+        \App\Utils\UserSession::disconnect();
 
         return redirect()->route("home-page");
     }

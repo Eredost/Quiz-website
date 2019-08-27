@@ -10,7 +10,7 @@ abstract class UserSession {
     const SESSION_INDEX_NAME = 'connectedUser';
 
     /**
-     * Méthode permettant de connecter un utilisateur
+     * Method to connect a user
      *
      * @param AppUser $user
      */
@@ -20,18 +20,17 @@ abstract class UserSession {
     }
 
     /**
-     * Méthode permettant de déconnecter un utilisateur
+     * Method to disconnect a user
      */
     public static function disconnect()
     {
-        session_destroy();
-        $_SESSION = array();
+        unset($_SESSION[self::SESSION_INDEX_NAME]);
 
         return redirect()->route("home-page");
     }
 
     /**
-     * Méthode permettant de savoir si le visiteur est connecté à un compte
+     * Method to find out if the visitor is connected to an account
      *
      * @return bool
      */
@@ -42,7 +41,7 @@ abstract class UserSession {
     }
 
     /**
-     * Méthode permettant de récupérer le Model de l'utilisateur connecté
+     * Method to recover the model of the logged-in user
      *
      * @return AppUser
      */
@@ -54,7 +53,7 @@ abstract class UserSession {
     }
 
     /**
-     * Méthode permettant de savoir si l'utilisateur connecté est admin
+     * Method to find out if the logged in user is admin
      *
      * @return bool
      */
