@@ -7,6 +7,12 @@
 
             @if (App\Utils\UserSession::isConnected())
 
+                @if (App\Utils\UserSession::isAdmin())
+
+                    <li class="nav__link"><a href="{{ route("admin-page") }}" class="nav__link--blue">Admin</a></li>
+
+                @endif
+
                 <li class="nav__link"><a href="{{ route("profile-page") }}" class="nav__link--blue">Profil</a></li>
                 <li class="nav__link"><a href="{{ route("logout-page") }}" class="nav__link--blue">Se deconnecter</a></li>
 

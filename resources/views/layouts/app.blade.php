@@ -18,7 +18,7 @@
 
         @yield("body")
 
-        @yield("navbar", view("layouts.footer"))
+        @yield("footer", view("layouts.footer"))
 
     </div>
 

@@ -59,6 +59,8 @@ abstract class UserSession {
      */
     public static function isAdmin() : bool
     {
+        $user = AppUser::find($_SESSION[self::SESSION_INDEX_NAME]);
 
+        return $user->roles->contains("label", "ROLE_ADMIN");
     }
 }

@@ -126,7 +126,7 @@ class UserController extends Controller
      */
     public function logOut()
     {
-        \App\Utils\UserSession::disconnect();
+        UserSession::disconnect();
 
         return redirect()->route("home-page");
     }

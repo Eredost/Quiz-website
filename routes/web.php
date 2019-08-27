@@ -76,3 +76,9 @@ $router->get("/account",
         "uses" => "UserController@profile",
         "as"   => "profile-page"
 ));
+
+$router->get("/admin",
+    array(
+        "uses" => "AdminController@admin",
+        "as"   => "admin-page"
+));
