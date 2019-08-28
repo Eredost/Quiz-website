@@ -4,9 +4,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\Result;
 use App\Models\Question;
 use App\Models\Quiz;
+use App\Utils\UserSession;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Mail;
 
 class QuizController extends Controller
 {
@@ -25,11 +29,17 @@ class QuizController extends Controller
 
         if ($request->isMethod("post")) {
 
-            $userResponses = $request->input();
+            if (UserSession::isConnected()) {
 
-            foreach($quiz->questions as $question) {
+                $userResponses = $request->input();
 
-                if (in_array($question->answers_id, $userResponses)) $score++ ;
+                foreach ($quiz->questions as $question) {
+
+                    if (in_array($question->answers_id, $userResponses)) $score++;
+                }
+
+                $user = UserSession::getUser();
+                Mail::to($user)->send(new Result($quiz, $answers, $score, $userResponses, $user));
             }
         }
 

@@ -82,6 +82,12 @@ a:hover, a.active {
     line-height: 1.4;
 }
 
+.section__paragraph--centered {
+    font-size: 1.3em;
+    text-align: center;
+    margin: 1em 0;
+}
+
 #quiz {
     margin-top: 3em;
 }
@@ -111,7 +117,6 @@ a:hover, a.active {
     width: calc(33% - 0.6em);
     margin: 0 0.3em 2em;
     padding: 0.5em;
-    border: 1px solid gray;
     -webkit-box-shadow: 0 0 10px gray;
     box-shadow: 0 0 10px gray;
     border-radius: 5px;
@@ -126,6 +131,13 @@ a:hover, a.active {
 .card__description,
 .card__author {
     padding: 0.8em 0;
+}
+
+.card__author {
+    border-top: 1px solid gray;
+    font-size: 0.9em;
+    margin-top: 1em;
+    color: gray;
 }
 
 .tags__links {
