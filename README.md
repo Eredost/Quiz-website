@@ -1,58 +1,32 @@
-# oQuiz, le retour de la vengeance :question:
+# Quiz
 
-Hey ! A ce qu'on m'a dit, tu as vu la lumière :bulb: cette saison ? :door: :running:
+Quiz site created with Lumen, which is a micro-framework based on Laravel.
+The site integration is in place and offers a registration and login form as well as a user profile interface. When you are connected, you can answer questions according to several themes and validate your answers.
 
-A défaut de lumière, tu as vu **Lumen** un micro-framework qu'il est bien à utiliser :heart_eyes:
+## Setup
 
-Pendant les prochaines journées, tu vas travailler sur le projet _oQuiz_ que tu as déjà préparé auparavant :tada:  
-**Chacun code dans son dépôt**, mais des groupes de travail sur Discord sont vivement conseillés :nerd_face:
+**Download Composer dependencies**
 
-## BDD, User Stories & Routes :construction:
+Make sure you have [Composer installed](https://getcomposer.org/download/) and then run:
 
-Pour avoir une base commune, les documents suivants sont fournis avec ce dépôt :
-- MCD
-- MLD
-- import SQL
-- user stories
-- routes
+```
+composer install
+```
 
-### BDD
+You may alternatively need to run `php composer.phar install`, depending on how you installed Composer.
 
-- Pour la partie base de données, il est préférable qu'on travaille tous sur la base de données fournie.
-- **Important :** Pour l'import des données [suivez ce guide !](./docs/database/import.md)
+**Setup the database**
 
-### User Stories
+You must import the SQL database with the 'oquiz.sql' file present in the 'docs / database' folder.
 
-- Il en est de même pour les user stories.
+**Setup .env**
 
-### Routes
+All you have to do is create a '.env' file on the same model as the '.env.example' file present in the root of the project, completing it with your own information from your database manager.
 
-- Cependant, tu es libre de prendre tes routes comme base de travail, si tu le souhaites.
+**Everything is in place! Have fun!**
 
-## Déroulement :keyboard:
+## Additional docs
 
-- On ne va pas faire tout le projet aujourd'hui
-- On va se contenter de mettre en place les user stories estampillées **_Sprint 1_**
-- Et c'est déjà pas mal :wink:
-- Ensuite, pour chaque journée d'atelier, il y a un sprint dédié :tada:
-
-> Note : Le sprint 5 est un Bonus, et comme tout Bonus, il est **optionnel**
-
-## Choix techniques :thinking:
-
-- Tu es libre des choix techniques de ton projet
-- Une intégration HTML/CSS est fournie, mais tu es libre d'en refaire une, avec ou sans framework CSS
-- Au final, tu es assez libre, sauf sur une chose : tu dois utiliser le framework _Lumen_
-- D'ailleurs, pour rappel, voilà le dépôt contenant la marche à suivre pour [commencer un projet avec Lumen](./S07-E01-exo-first-lumen-project)
-
-## Users :family:
-
-- il y a actuellement 2 utilisateurs dans la base de données
-- le mot de passe pour ces 2 users est : _quizoclock_
-
-## Bonus :lipstick:
-
-- Faire une inté HTML/CSS bien plus jolie (heureusement, c'est pas très difficile...)
-- Utiliser le framework CSS de ton choix
-- Nous suggérons l'utilisation de [Bootstrap](https://getbootstrap.com/) ou de [Bulma](https://bulma.io/)
-- Ce bonus est _presque obligatoire_ tellement ça pique les yeux... :unamused:
+- [User Stories](docs/user_stories.md)
+- [Routes](docs/routes.md)
+- Conceptual data model: ![Conceptual Data Model](docs/database/oquiz.svg)

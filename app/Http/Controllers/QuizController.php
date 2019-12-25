@@ -39,7 +39,7 @@ class QuizController extends Controller
                 }
 
                 $user = UserSession::getUser();
-                Mail::to($user)->send(new Result($quiz, $answers, $score, $userResponses, $user));
+                //Mail::to($user)->send(new Result($quiz, $answers, $score, $userResponses, $user));
             }
         }
 
