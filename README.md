@@ -3,6 +3,8 @@
 Quiz site created with Lumen, which is a micro-framework based on Laravel.
 The site integration is in place and offers a registration and login form as well as a user profile interface. When you are connected, you can answer questions according to several themes and validate your answers.
 
+![](docs/images/capture.PNG)
+
 ## Setup
 
 **Download Composer dependencies**
